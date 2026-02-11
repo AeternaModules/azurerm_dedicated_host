@@ -19,8 +19,8 @@ EOT
     name                    = string
     platform_fault_domain   = number
     sku_name                = string
-    auto_replace_on_failure = optional(bool, true)
-    license_type            = optional(string, "None")
+    auto_replace_on_failure = optional(bool)   # Default: true
+    license_type            = optional(string) # Default: "None"
     tags                    = optional(map(string))
   }))
 }
