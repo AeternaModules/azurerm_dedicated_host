@@ -1,3 +1,7 @@
+output "dedicated_hosts_id" {
+  description = "Map of id values across all dedicated_hosts, keyed the same as var.dedicated_hosts"
+  value       = { for k, v in azurerm_dedicated_host.dedicated_hosts : k => v.id }
+}
 output "dedicated_hosts_auto_replace_on_failure" {
   description = "Map of auto_replace_on_failure values across all dedicated_hosts, keyed the same as var.dedicated_hosts"
   value       = { for k, v in azurerm_dedicated_host.dedicated_hosts : k => v.auto_replace_on_failure }
